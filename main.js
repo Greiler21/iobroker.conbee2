@@ -11,7 +11,7 @@ let hue_factor = 182.041666667;
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, {
-        name: 'conbee2',
+        name: 'conbee',
         stateChange: function (id, state) {
     if (!id || !state || state.ack) {
         return;
@@ -385,7 +385,7 @@ function main() {
 
 function createAPIkey(host, credentials, callback){
     let newApiKey = null;
-    const userDescription = 'iobroker.deconz';
+    const userDescription = 'iobroker.conbee';
     let auth;
 
     if(credentials !== null){
