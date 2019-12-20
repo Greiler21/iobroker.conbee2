@@ -843,6 +843,26 @@ function getGroupAttributes(groupId) {
                     for (let z = 0; z <= count2; z++) {
                         let stateName = Object.keys(list['action'])[z];
                         switch (stateName) {
+
+                            // TEST CODE FROM THUBER
+                            case 'scene':
+                                adapter.setObjectNotExists(`Groups.${groupId}` + '.' + stateName, {
+                                    type: 'state',
+                                    common: {
+                                        name: list['name'] + ' ' +stateName,
+                                        type: 'number',
+                                        role: 'argument',
+                                        read: true,
+                                        write: false
+                                    },
+                                    native: {}
+                                });
+                                adapter.setState(`Groups.${groupId}` + '.' + stateName, {val: list['action'][stateName], ack: true});
+                                break;
+
+                            // TEST CODE FROM THUBER
+
+
                             case 'on':
                                 adapter.setObjectNotExists(`Groups.${groupId}` + '.' + stateName, {
                                     type: 'state',
