@@ -11,7 +11,7 @@ let hue_factor = 182.041666667;
 function startAdapter(options) {
     options = options || {};
     Object.assign(options, {
-        name: 'conbee',
+        name: 'conbee2',
         stateChange: function (id, state) {
     if (!id || !state || state.ack) {
         return;
